@@ -5,7 +5,7 @@ Installation -
 
 $ apt update && apt upgrade
 
-$ git clone https://github.com/kinghacker0/wishfish
+$ git clone https://github.com/kinghacker0/WishFish.git
 
 $ cd WishFish
 
