@@ -15,8 +15,8 @@ printf "\e░░████╔═████║░██║░╚═══█�
 printf "\e░░╚██╔╝░╚██╔╝░██║██████╔╝██║░░██║██║░░░░░██║██████╔╝██║░░██║\n"
 printf "\e░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═════╝░╚═╝░░╚═╝\n"
 
-printf " \e[1;77m v1.0 coded by github.com/thelinuxchoice/saycheese\e[0m \n"
-printf " \e[1;77m v1.1 modified by github.com/kinghacker0/wishfish\e[0m \n"
+printf " \e[1;77m website :- www.hackersking.in \e[0m \n"
+printf " \e[1;77m v1.1 Modified by github.com/kinghacker0/wishfish\e[0m \n"
 
 printf "\n"
 
