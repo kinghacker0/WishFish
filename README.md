@@ -11,6 +11,7 @@ $ apt install openssh
 $ git clone https://github.com/kinghacker0/WishFish
 
 #Usage
+
 $ cd wishfish
 
 Now turn your device hotspot
