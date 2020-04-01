@@ -3,8 +3,11 @@ Using WishFish tool you can generat different phishing links of wishing or custo
 
 
 #Installation
+
 $ apt install php
+
 $ apt install openssh
+
 $ git clone https://github.com/kinghacker0/WishFish
 
 #Usage
