@@ -29,4 +29,4 @@ $ bash wishfish.sh
 This information is only for educationla purpose and we are not responsible for any kind of illegal activity done by this tool.
 
 
-                                   Inspired By github.com/thelinuxchoice
+                                              Inspired By github.com/thelinuxchoice
