@@ -1,2 +1,2 @@
 #! /bin/sh
-cp -r caaptured ../storage/pictures
+cp -r captured ../storage/pictures
