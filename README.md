@@ -5,11 +5,11 @@
 
 <h3>Installation</h3>
 
-$ apt install php
+$ pkg install php
 
-$ apt install wget
+$ pkg install wget
 
-$ apt install openssh
+$ pkg install openssh
 
 $ git clone https://github.com/kinghacker0/WishFish
 
@@ -19,7 +19,7 @@ $ cd wishfish
 
 Now turn your device hotspot
 
-$ bash wishfish.sh
+$ ./wishfish.sh
 
 <p>Sometimes servero server is down so always go with ngrok for instant link and wait until it generates url for then send it to victim.
 </p>
