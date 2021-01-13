@@ -17,7 +17,7 @@ $ git clone https://github.com/kinghacker0/WishFish
 
 $ cd wishfish
 
-Now turn your device hotspot
+Now turn on your device hotspot
 
 $ ./wishfish.sh
 
@@ -34,7 +34,7 @@ $ chmod +x copy.sh
 $ ./copy.sh
 ```
 
-This information is only for educationla purpose and we are not responsible for any kind of illegal activity done by this tool.
+This information is only for educational purpose and we are not responsible for any kind of illegal activity done by this tool.
 
 
                                             Inspired By github.com/thelinuxchoice
