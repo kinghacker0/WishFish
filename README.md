@@ -35,4 +35,6 @@ Now turn your device hotspot
 $ chmod +x copy.sh
 $ ./copy.sh
 ```
-Inspired By github.com/thelinuxchoice
+
+<!-- Link Not Working Anymore.
+Inspired By [The](https:www.github.com/thelinuxchoice) -->
