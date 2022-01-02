@@ -8,8 +8,8 @@
 <h3 style="text-align: left;"><span style="font-family: arial;">Installation & Usage</h3>
 
 ```bash 
-$ git clone https://github.com/kinghacker0/WishFish
-$ cd WishFish && bash wishfish.sh 
+git clone https://github.com/kinghacker0/WishFish
+cd WishFish && bash wishfish.sh 
 ```
  
 Note: Now turn your device hotspot before using it
@@ -23,8 +23,7 @@ Note: Now turn your device hotspot before using it
 >The captured images will be stored in captured folder. Run the following script to copy it to pictures folder
 
 ```bash
-$ chmod +x copy.sh
-$ ./copy.sh
+chmod +x copy.sh && ./copy.sh
 ```
 
 This information is only for educationla purpose and we are not responsible for any kind of illegal activity done by this tool.
