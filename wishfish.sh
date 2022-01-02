@@ -11,9 +11,9 @@ echo -e "\033[31m \ \        / (_)   | |    \e[0m|  ____(_)   | |         ";
 echo -e "\033[31m  \ \  /\  / / _ ___| | __ \e[0m| |__   _ ___| |__       ";
 echo -e "\033[31m   \ \/  \/ / | / __| '_  |\e[0m|  __| | / __| '_ \      ";
 echo -e "\033[31m    \  /\  /  | \__ \ | | |\e[0m| |    | \__ \ | | |     ";
-echo -e "\033[31m     \/  \/   |_|___/_| |_|\e[0m|_|    |_|___/_| |_| v2.0";
+echo -e "\033[31m     \/  \/   |_|___/_| |_|\e[0m|_|    |_|___/_| |_| v3.0";
 
-printf " \e[1;93m WishFish \e[0m \n"
+printf " \e[1;93m WishFish v3.0\e[0m \n"
 printf " \e[1;77m www.hackersking.in | youtube.com/mohitsaran0 \e[0m \n"
 
 printf "\n"
